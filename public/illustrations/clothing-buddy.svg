@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="160" rx="32" fill="#FFF3FD"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="80" cy="120" rx="52" ry="18" fill="#FFD7F1"/>
+  </g>
+  <path d="M92 44L108 56C110.485 57.8632 110.889 61.2984 108.789 63.4327L96 76H64L51.2107 63.4327C49.111 61.2984 49.5147 57.8632 52 56L68 44C70.1667 42.375 73.8333 42.375 76 44L80 47L84 44C86.1667 42.375 89.8333 42.375 92 44Z" fill="#FF9ED6"/>
+  <rect x="60" y="72" width="40" height="52" rx="16" fill="#2F2A42"/>
+  <rect x="68" y="82" width="24" height="28" rx="12" fill="#8AE8F2"/>
+  <circle cx="60" cy="64" r="6" fill="#FFE59C"/>
+  <circle cx="100" cy="64" r="6" fill="#FFE59C"/>
+  <path d="M76 52C76 49.7909 77.7909 48 80 48C82.2091 48 84 49.7909 84 52V60C84 62.2091 82.2091 64 80 64C77.7909 64 76 62.2091 76 60V52Z" fill="#FFFFFF" opacity="0.8"/>
+  <path d="M48 88C48 84.6863 50.6863 82 54 82H62V98H54C50.6863 98 48 95.3137 48 92V88Z" fill="#FFB76B"/>
+  <path d="M112 88C112 84.6863 109.314 82 106 82H98V98H106C109.314 98 112 95.3137 112 92V88Z" fill="#5FC4FF"/>
+  <defs>
+    <filter id="shadow" x="12" y="84" width="136" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="8" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+</svg>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="160" rx="32" fill="#FFF7ED"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="80" cy="118" rx="54" ry="18" fill="#FFE1C4"/>
+  </g>
+  <circle cx="80" cy="64" r="28" fill="#2F2A42"/>
+  <circle cx="68" cy="60" r="6" fill="#FFFFFF"/>
+  <circle cx="92" cy="60" r="6" fill="#FFFFFF"/>
+  <path d="M80 82C83.866 82 87 78.866 87 75H73C73 78.866 76.134 82 80 82Z" fill="#FFCFEC"/>
+  <rect x="52" y="92" width="56" height="40" rx="20" fill="#FFB76B"/>
+  <path d="M64 88C64 83.5817 67.5817 80 72 80H88C92.4183 80 96 83.5817 96 88V102H64V88Z" fill="#FF7F82"/>
+  <path d="M108 96C112.418 96 116 99.5817 116 104C116 108.418 112.418 112 108 112H100V96H108Z" fill="#5FC4FF"/>
+  <path d="M40 104C40 99.5817 43.5817 96 48 96H56V112H48C43.5817 112 40 108.418 40 104Z" fill="#9BF0D9"/>
+  <path d="M80 100L92 132H68L80 100Z" fill="#2F2A42"/>
+  <circle cx="120" cy="60" r="10" fill="#FFE59C"/>
+  <path d="M120 48V40" stroke="#FFE59C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M120 80V72" stroke="#FFE59C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M108 60H100" stroke="#FFE59C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M140 60H132" stroke="#FFE59C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M112.686 49.314L107.058 43.686" stroke="#FFE59C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M132.942 69.5703L127.314 63.9423" stroke="#FFE59C" stroke-width="6" stroke-linecap="round"/>
+  <defs>
+    <filter id="shadow" x="18" y="82" width="124" height="90" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="8" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+</svg>
+

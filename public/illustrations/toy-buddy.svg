@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="160" rx="32" fill="#E7F6FF"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="80" cy="116" rx="52" ry="18" fill="#B6E4FF"/>
+  </g>
+  <circle cx="68" cy="66" r="26" fill="#2F2A42"/>
+  <circle cx="60" cy="60" r="6" fill="white"/>
+  <circle cx="76" cy="60" r="6" fill="white"/>
+  <rect x="46" y="92" width="68" height="40" rx="20" fill="#5FC4FF"/>
+  <rect x="54" y="100" width="20" height="12" rx="6" fill="#FFFFFF" opacity="0.7"/>
+  <rect x="86" y="100" width="20" height="12" rx="6" fill="#FFFFFF" opacity="0.7"/>
+  <rect x="64" y="44" width="8" height="18" rx="4" fill="#FFCFEC"/>
+  <rect x="82" y="44" width="8" height="18" rx="4" fill="#FFCFEC"/>
+  <rect x="94" y="78" width="26" height="14" rx="7" fill="#FF7F82"/>
+  <path d="M44 82C44 78.6863 46.6863 76 50 76H62V94H50C46.6863 94 44 91.3137 44 88V82Z" fill="#FFB76B"/>
+  <path d="M116 82C116 78.6863 113.314 76 110 76H98V94H110C113.314 94 116 91.3137 116 88V82Z" fill="#FF9ED6"/>
+  <defs>
+    <filter id="shadow" x="12" y="80" width="136" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="8" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+</svg>
+

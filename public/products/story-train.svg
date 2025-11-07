@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220" height="180" viewBox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="180" rx="28" fill="#EFF6FF"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="110" cy="140" rx="76" ry="20" fill="#D4E5FF"/>
+  </g>
+  <rect x="58" y="92" width="52" height="36" rx="12" fill="#5FC4FF"/>
+  <rect x="116" y="84" width="52" height="44" rx="14" fill="#C9A3FF"/>
+  <rect x="126" y="72" width="24" height="16" rx="6" fill="#FFE59C"/>
+  <rect x="78" y="72" width="20" height="20" rx="10" fill="#FF9ED6"/>
+  <path d="M70 128C70 120.268 76.268 114 84 114H98C105.732 114 112 120.268 112 128V132H70V128Z" fill="#9BF0D9"/>
+  <path d="M128 128C128 120.268 134.268 114 142 114H154C161.732 114 168 120.268 168 128V132H128V128Z" fill="#FFCFEC"/>
+  <circle cx="82" cy="132" r="10" fill="#2F2A42"/>
+  <circle cx="100" cy="132" r="10" fill="#2F2A42"/>
+  <circle cx="140" cy="132" r="10" fill="#2F2A42"/>
+  <circle cx="158" cy="132" r="10" fill="#2F2A42"/>
+  <circle cx="82" cy="132" r="4" fill="#FFE59C"/>
+  <circle cx="100" cy="132" r="4" fill="#FFE59C"/>
+  <circle cx="140" cy="132" r="4" fill="#FFE59C"/>
+  <circle cx="158" cy="132" r="4" fill="#FFE59C"/>
+  <defs>
+    <filter id="shadow" x="22" y="112" width="176" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+</svg>
+

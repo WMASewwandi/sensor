@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220" height="180" viewBox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="180" rx="28" fill="#F2FFF9"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="110" cy="140" rx="78" ry="20" fill="#CCF6E5"/>
+  </g>
+  <ellipse cx="110" cy="96" rx="70" ry="44" fill="#9BF0D9"/>
+  <ellipse cx="110" cy="96" rx="54" ry="30" fill="#FFE59C"/>
+  <path d="M56 108L64 134" stroke="#5FC4FF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M164 108L156 134" stroke="#5FC4FF" stroke-width="10" stroke-linecap="round"/>
+  <rect x="68" y="128" width="84" height="20" rx="10" fill="#2F2A42"/>
+  <circle cx="92" cy="96" r="12" fill="#FF9ED6"/>
+  <circle cx="110" cy="96" r="12" fill="#5FC4FF"/>
+  <circle cx="128" cy="96" r="12" fill="#FF7F82"/>
+  <defs>
+    <filter id="shadow" x="18" y="112" width="184" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+</svg>
+
