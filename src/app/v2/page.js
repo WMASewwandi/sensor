@@ -58,12 +58,27 @@ const eventDetails = [
 ];
 
 const categories = [
-  { label: "Learning Kits", icon: "🧠" },
-  { label: "Soft Toys", icon: "🧸" },
-  { label: "Dress Up", icon: "👗" },
-  { label: "Sensory Play", icon: "🎨" },
-  { label: "Outdoor Fun", icon: "🌈" },
-  { label: "Storytime", icon: "📚" },
+  {
+    label: "Learning Kits",
+    image: "url('https://www.shopedx.co.uk/cdn/shop/articles/06_19282_FunPlay_NumberRods_9637.jpg?v=1727278415&width=1445')",
+  },
+  {
+    label: "Soft Toys",
+    image: "url('https://media.wishque.com/data/images/products/6168/thumbnail/34628560_394985722584_0.20466900-1581084575.png')",
+  },
+  
+  {
+    label: "Outdoor Fun",
+    image: "url('https://www.jobsinchildcare.com/files/pictures/Kidsoutdoors.png')",
+  },
+  {
+    label: "Dress Up",
+    image: "url('https://t4.ftcdn.net/jpg/06/36/79/97/360_F_636799764_zl8uft0zzswzrhpjL345NGB54TTl5btR.jpg')",
+  },
+  {
+    label: "Storytime",
+    image: "url('https://thumbs.dreamstime.com/b/teacher-reading-to-children-story-time-education-diversity-learning-reads-aloud-group-diverse-enjoying-together-378578286.jpg')",
+  },
 ];
 
 const justForYou = [
@@ -72,18 +87,28 @@ const justForYou = [
     price: "LKR 5,900",
     badge: "New",
     details: ["3 Colours", "Stack & Sort"],
+    image: "/no-image.jpg",
   },
   {
     title: "Galaxy Night Light",
     price: "LKR 4,300",
     badge: "Kids' Pick",
     details: ["2 Colours", "Calming glow"],
+    image: "/no-image.jpg",
   },
   {
     title: "Explorer Busy Board",
     price: "LKR 6,750",
     badge: "Trending",
     details: ["4 Activities", "Fine motor play"],
+    image: "/no-image.jpg",
+  },
+  {
+    title: "Stellar Story Projector",
+    price: "LKR 8,150",
+    badge: "Limited",
+    details: ["5 Constellation reels", "Bedtime storytelling"],
+    image: "/no-image.jpg",
   },
 ];
 
@@ -93,24 +118,32 @@ const bestSellers = [
     price: "LKR 8,990",
     rating: 4.9,
     details: ["3 Prints", "Indoor/Outdoor"],
+    image: "/no-image.jpg",
+    badge: "Top Rated",
   },
   {
     title: "STEM Discovery Kit",
     price: "LKR 7,250",
     rating: 4.8,
-    details: ["8 Experiments", "Ages 6+"]
+    details: ["8 Experiments", "Ages 6+"],
+    image: "/no-image.jpg",
+    badge: "STEM Star",
   },
   {
     title: "Cozy Cloud Blanket",
     price: "LKR 5,450",
     rating: 4.7,
     details: ["Ultra-soft", "Two sizes"],
+    image: "/no-image.jpg",
+    badge: "Snuggle Fav",
   },
   {
     title: "Musical Story Cube",
     price: "LKR 6,200",
     rating: 4.9,
     details: ["12 Stories", "Rechargeable"],
+    image: "/no-image.jpg",
+    badge: "Staff Pick",
   },
 ];
 
@@ -143,25 +176,25 @@ export default function NavigationShowcase() {
     <div className={styles.page}>
       <div className={styles.wrapper}>
         <div className={styles.headerWrapper}>
-          <header className={styles.header}>
+        <header className={styles.header}>
             <div className={styles.headerLeft}>
-              <button
-                type="button"
-                className={styles.menuToggle}
-                aria-expanded={mobileMenuOpen}
-                aria-controls="primary-navigation"
-                onClick={() => setMobileMenuOpen((prev) => !prev)}
-              >
-                <span className={styles.menuToggleBar} />
-                <span className={styles.menuToggleBar} />
-                <span className={styles.menuToggleBar} />
-                <span className={styles.srOnly}>Toggle navigation</span>
-              </button>
+            <button
+              type="button"
+              className={styles.menuToggle}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="primary-navigation"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+            >
+              <span className={styles.menuToggleBar} />
+              <span className={styles.menuToggleBar} />
+              <span className={styles.menuToggleBar} />
+              <span className={styles.srOnly}>Toggle navigation</span>
+            </button>
 
             <Link href="/" className={styles.brand} aria-label="Home">
               <Image
                 src="/logo.png"
-                alt="Sensor Kids logo"
+                alt="Sensory logo"
                 width={150}
                 height={48}
                 className={styles.brandLogo}
@@ -171,30 +204,30 @@ export default function NavigationShowcase() {
             </div>
 
             <nav className={styles.nav} aria-label="Primary">
-              <ul
-                id="primary-navigation"
-                className={`${styles.navList} ${mobileMenuOpen ? styles.navListOpen : ""}`}
-              >
-                {navItems.map((item) => (
-                  <li
-                    key={item.label}
-                    className={`${styles.navItem} ${item.hasDropdown ? styles.hasDropdown : ""}`}
-                  >
+            <ul
+              id="primary-navigation"
+              className={`${styles.navList} ${mobileMenuOpen ? styles.navListOpen : ""}`}
+            >
+              {navItems.map((item) => (
+                <li
+                  key={item.label}
+                  className={`${styles.navItem} ${item.hasDropdown ? styles.hasDropdown : ""}`}
+                >
                     <Link
                       href={item.href}
                       className={styles.navLink}
                       onClick={closeMobileMenu}
                     >
-                      <span>{item.label}</span>
-                      {item.hasDropdown ? (
-                        <span aria-hidden="true" className={styles.caret}>
-                          ▾
-                        </span>
-                      ) : null}
-                    </Link>
-                    {item.submenu ? (
-                      <ul className={styles.subMenu}>
-                        {item.submenu.map((subItem) => (
+                    <span>{item.label}</span>
+                    {item.hasDropdown ? (
+                      <span aria-hidden="true" className={styles.caret}>
+                        ▾
+                      </span>
+                    ) : null}
+                  </Link>
+                  {item.submenu ? (
+                    <ul className={styles.subMenu}>
+                      {item.submenu.map((subItem) => (
                           <li
                             key={`${item.label}-${subItem.label}`}
                             className={styles.subMenuItem}
@@ -202,21 +235,21 @@ export default function NavigationShowcase() {
                             <Link href={subItem.href} onClick={closeMobileMenu}>
                               {subItem.label}
                             </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
-            </nav>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-            <div className={styles.actions}>
-              <form className={styles.searchBar} role="search">
-                <label htmlFor="global-search" className={styles.srOnly}>
+          <div className={styles.actions}>
+            <form className={styles.searchBar} role="search">
+              <label htmlFor="global-search" className={styles.srOnly}>
                   Search for a product
-                </label>
-                <span aria-hidden="true" className={styles.searchIcon}>
+              </label>
+              <span aria-hidden="true" className={styles.searchIcon}>
                   <svg
                     width="18"
                     height="18"
@@ -231,15 +264,15 @@ export default function NavigationShowcase() {
                       strokeLinecap="round"
                     />
                   </svg>
-                </span>
-                <input
-                  id="global-search"
-                  type="search"
+              </span>
+              <input
+                id="global-search"
+                type="search"
                   placeholder="Search for a Product"
-                />
-              </form>
+              />
+            </form>
 
-              <button type="button" className={styles.iconButton} aria-label="Your account">
+            <button type="button" className={styles.iconButton} aria-label="Your account">
                 <svg
                   width="18"
                   height="18"
@@ -260,14 +293,14 @@ export default function NavigationShowcase() {
                     strokeLinecap="round"
                   />
                 </svg>
-              </button>
+            </button>
 
-              <Link href="#cart" className={styles.iconButton} aria-label="View cart">
-                <span aria-hidden="true">🛒</span>
-                <span className={styles.cartBadge}>0</span>
-              </Link>
-            </div>
-          </header>
+            <Link href="#cart" className={styles.iconButton} aria-label="View cart">
+              <span aria-hidden="true">🛒</span>
+              <span className={styles.cartBadge}>0</span>
+            </Link>
+          </div>
+        </header>
           {mobileMenuOpen ? (
             <button
               type="button"
@@ -413,11 +446,11 @@ export default function NavigationShowcase() {
           <section className={styles.hero} aria-labelledby="fitness-expo">
             <div className={styles.heroBackdrop} aria-hidden="true" />
             <div className={styles.heroContent}>
-              <ul className={styles.highlightList}>
+              {/* <ul className={styles.highlightList}>
                 {heroHighlights.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
-              </ul>
+              </ul> */}
 
               <h1 id="fitness-expo" className={styles.heroTitle}>
                 <span className={styles.heroTitleAccent}>Playful</span>
@@ -453,13 +486,18 @@ export default function NavigationShowcase() {
                 View All
               </Link>
             </div>
-            <div className={styles.categoryGrid}>
-              {categories.map((category) => (
-                <div key={category.label} className={styles.categoryCard}>
-                  <span className={styles.categoryIcon}>{category.icon}</span>
-                  <span>{category.label}</span>
-                </div>
-              ))}
+            <div className={styles.categorySlider}>
+              <div className={styles.categoryTrack}>
+                {categories.concat(categories).map((category, index) => (
+                  <div
+                    key={`${category.label}-${index}`}
+                    className={styles.categoryCard}
+                    style={{ backgroundImage: category.image }}
+                  >
+                    <div className={styles.categoryLabel}>{category.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
@@ -467,28 +505,36 @@ export default function NavigationShowcase() {
             <div className={styles.sectionHeader}>
               <h2 id="just-for-you">Just for You</h2>
               <Link href="#shop" className={styles.sectionLink}>
-                Shop curated picks
+                Shop Now
               </Link>
             </div>
             <div className={styles.productGrid}>
-              {justForYou.map((product) => (
-                <article key={product.title} className={styles.productCard}>
+              {justForYou.map((product, productIndex) => (
+                <article key={`${product.title}-${productIndex}`} className={styles.productCard}>
                   <div className={styles.productImageWrap}>
                     <Image
-                      src="/no-image.jpg"
+                      src={product.image ?? "/no-image.jpg"}
                       alt={product.title}
                       fill
                       sizes="(max-width: 768px) 50vw, 25vw"
                     />
-                    <span className={styles.productBadge}>{product.badge}</span>
+                    {product.badge ? <span className={styles.productBadge}>{product.badge}</span> : null}
+                    <div className={styles.productOverlay}>
+                      <button type="button" className={styles.productActionPrimary}>
+                        Add to Cart
+                      </button>
+                      <button type="button" className={styles.productActionSecondary}>
+                        Buy Now
+                      </button>
+                    </div>
                   </div>
                   <div className={styles.productContent}>
                     <h3>{product.title}</h3>
                     <div className={styles.productMeta}>
                       <span>{product.price}</span>
                       <div className={styles.productDetails}>
-                        {product.details.map((detail) => (
-                          <span key={`${product.title}-${detail}`}>{detail}</span>
+                        {product.details.map((detail, detailIndex) => (
+                          <span key={`${product.title}-${detailIndex}`}>{detail}</span>
                         ))}
                       </div>
                     </div>
@@ -499,18 +545,33 @@ export default function NavigationShowcase() {
           </section>
 
           <section className={styles.dealBanner} aria-labelledby="sparkle-deal">
-            <div className={styles.dealContent}>
-              <p className={styles.dealBadge}>Limited Time</p>
-              <h2 id="sparkle-deal">Sparkle & Save Bundle</h2>
-              <p>Mix and match any 3 sensory play kits and save 20% this weekend only.</p>
-              <div className={styles.dealActions}>
-                <Link href="#shop" className={styles.primaryButton}>
-                  Build my bundle
-                </Link>
-                <Link href="#learn" className={styles.secondaryButton}>
-                  Learn more
-                </Link>
+            <div className={styles.dealLayout}>
+              <div className={styles.dealContent}>
+                <p className={styles.dealBadge}>Limited Time</p>
+                <h2 id="sparkle-deal">Sparkle & Save Bundle</h2>
+                <p>Mix and match any 3 sensory play kits and save 20% this weekend only.</p>
+                <div className={styles.dealActions}>
+                  <Link href="#shop" className={styles.primaryButton}>
+                    Build my bundle
+                  </Link>
+                  <Link href="#learn" className={styles.secondaryButton}>
+                    Learn more
+                  </Link>
+                </div>
               </div>
+              <aside className={styles.dealBonus} aria-label="Bundle perks">
+                <p className={styles.dealBonusBadge}>Bonus Treat</p>
+                <h3>Glow Play Gift Set</h3>
+                <p>Every bundle ships with a 6-piece glow-in-the-dark sticker pack and a bedtime story mini zine.</p>
+                <ul>
+                  <li>Ships free island-wide</li>
+                  <li>Limited to the first 250 orders</li>
+                  <li>Includes surprise sensory fidget</li>
+                </ul>
+                <Link href="#bonus" className={styles.dealBonusLink}>
+                  Claim the bonus
+                </Link>
+              </aside>
             </div>
           </section>
 
@@ -522,23 +583,32 @@ export default function NavigationShowcase() {
               </Link>
             </div>
             <div className={styles.bestSellerRail}>
-              {bestSellers.map((product) => (
-                <article key={product.title} className={styles.bestSellerCard}>
+              {bestSellers.map((product, productIndex) => (
+                <article key={`${product.title}-${productIndex}`} className={styles.productCard}>
                   <div className={styles.productImageWrap}>
                     <Image
-                      src="/no-image.jpg"
+                      src={product.image ?? "/no-image.jpg"}
                       alt={product.title}
                       fill
                       sizes="(max-width: 768px) 70vw, 20vw"
                     />
+                    {product.badge ? <span className={styles.productBadge}>{product.badge}</span> : null}
+                    <div className={styles.productOverlay}>
+                      <button type="button" className={styles.productActionPrimary}>
+                        Add to Cart
+                      </button>
+                      <button type="button" className={styles.productActionSecondary}>
+                        Buy Now
+                      </button>
+                    </div>
                   </div>
                   <div className={styles.productContent}>
                     <h3>{product.title}</h3>
                     <div className={styles.productMeta}>
                       <span>{product.price}</span>
                       <div className={styles.productDetails}>
-                        {product.details.map((detail) => (
-                          <span key={`${product.title}-${detail}`}>{detail}</span>
+                        {product.details.map((detail, detailIndex) => (
+                          <span key={`${product.title}-${detailIndex}`}>{detail}</span>
                         ))}
                         <span className={styles.productRating}>⭐ {product.rating.toFixed(1)}</span>
                       </div>
@@ -568,7 +638,7 @@ export default function NavigationShowcase() {
         <footer className={styles.footer} aria-label="Footer">
           <div className={styles.footerGrid}>
             <div>
-              <h3>Sensor Kids</h3>
+              <h3>Sensory</h3>
               <p>Curated playthings for curious minds. Designed with love in Sri Lanka.</p>
             </div>
             <div>
@@ -614,7 +684,7 @@ export default function NavigationShowcase() {
               </ul>
             </div>
           </div>
-          <p className={styles.footerNote}>© {new Date().getFullYear()} Sensor Kids. All rights reserved.</p>
+          <p className={styles.footerNote}>© {new Date().getFullYear()} Sensory. All rights reserved.</p>
         </footer>
       </div>
     </div>

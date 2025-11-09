@@ -490,7 +490,7 @@
   .navOverlay {
     display: block;
     position: fixed;
-    inset: 0;
+  inset: 0;
     background: rgba(8, 9, 16, 0.62);
     backdrop-filter: blur(4px);
     border: none;
@@ -516,8 +516,8 @@
   .headerLeft {
     justify-self: stretch;
     width: 100%;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
     justify-content: space-between;
     gap: 12px;
   }
@@ -574,8 +574,8 @@
   }
 
   .navLink {
-    justify-content: center;
-    width: 100%;
+  justify-content: center;
+  width: 100%;
     font-size: 16px;
   }
 
@@ -796,7 +796,7 @@
   position: fixed;
   right: 24px;
   bottom: 28px;
-  display: none;
+    display: none;
   align-items: center;
   justify-content: center;
   width: 60px;
@@ -835,7 +835,7 @@
   bottom: 0;
   transform: translateY(100%);
   display: flex;
-  flex-direction: column;
+    flex-direction: column;
   gap: 16px;
   padding: 28px 20px calc(32px + env(safe-area-inset-bottom));
   background: rgba(12, 14, 28, 0.96);
@@ -861,7 +861,7 @@
 }
 
 .searchSheetForm {
-  display: flex;
+    display: flex;
   flex-direction: column;
   gap: 16px;
 }
@@ -1004,7 +1004,7 @@
 .sectionHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+    justify-content: space-between;
   gap: 16px;
 }
 
@@ -1036,28 +1036,56 @@
 
 .categoryGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .categoryCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 24px 18px;
-  border-radius: 24px;
-  background: rgba(18, 20, 36, 0.88);
-  border: 1px solid rgba(254, 140, 254, 0.16);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
-  text-align: center;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 13px;
+  position: relative;
+  flex: 0 0 clamp(210px, 24vw, 260px);
+  height: clamp(230px, 26vw, 320px);
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.38);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
 }
 
-.categoryIcon {
-  font-size: 28px;
+.categoryCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 12, 22, 0.35) 0%, rgba(10, 12, 22, 0.85) 100%);
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.categoryCard:hover,
+.categoryCard:focus-within {
+  transform: translateY(-6px);
+}
+
+.categoryCard:hover::after,
+.categoryCard:focus-within::after {
+  opacity: 0.9;
+}
+
+.categoryLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.75);
+  z-index: 2;
 }
 
 .productGrid {
@@ -1096,6 +1124,69 @@
 .productImageWrap img {
   object-fit: cover;
   filter: saturate(0.85);
+}
+
+.productOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(180deg, rgba(8, 10, 22, 0.1) 0%, rgba(8, 10, 22, 0.84) 90%);
+  padding: 20px;
+    opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.24s ease, transform 0.24s ease;
+  }
+
+.productCard:hover .productOverlay,
+.productCard:focus-within .productOverlay {
+    opacity: 1;
+    transform: translateY(0);
+  pointer-events: auto;
+}
+
+.productActionPrimary,
+.productActionSecondary {
+  width: 100%;
+  max-width: 160px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.productActionPrimary {
+  background: linear-gradient(135deg, #fe8cfe, #faad35);
+  color: #0a0d1a;
+  box-shadow: 0 12px 28px rgba(250, 173, 53, 0.35);
+}
+
+.productActionPrimary:hover,
+.productActionPrimary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(250, 173, 53, 0.45);
+}
+
+.productActionSecondary {
+  background: rgba(10, 12, 24, 0.7);
+  color: #8bf0f8;
+  border-color: rgba(139, 240, 248, 0.55);
+}
+
+.productActionSecondary:hover,
+.productActionSecondary:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(139, 240, 248, 0.8);
+  box-shadow: 0 14px 32px rgba(139, 240, 248, 0.38);
 }
 
 .productBadge {
@@ -1151,11 +1242,40 @@
 .dealBanner {
   position: relative;
   margin-top: 64px;
-  padding: 48px 36px;
-  border-radius: 32px;
-  background: linear-gradient(135deg, rgba(254, 140, 254, 0.32), rgba(139, 240, 248, 0.18));
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  padding: 64px clamp(28px, 6vw, 72px);
+  border-radius: 0;
+  background:
+    radial-gradient(circle at top left, rgba(254, 140, 254, 0.32), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(139, 240, 248, 0.28), transparent 60%),
+    linear-gradient(140deg, rgba(10, 12, 26, 0.82) 15%, rgba(10, 12, 26, 0.55) 100%),
+    url("https://static.vecteezy.com/system/resources/previews/013/480/574/non_2x/cartoon-kids-with-blank-banner-vector.jpg");
+  background-size: cover, cover, cover, cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid rgba(139, 240, 248, 0.26);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dealBanner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: clamp(80px, 12vw, 160px);
+  pointer-events: none;
+}
+
+.dealBanner::after {
+  bottom: -1px;
+  background: linear-gradient(to top, rgba(9, 8, 18, 1), rgba(9, 8, 18, 0.65), rgba(9, 8, 18, 0));
 }
 
 .dealContent {
@@ -1163,40 +1283,177 @@
   flex-direction: column;
   gap: 18px;
   max-width: 520px;
+  width: min(100%, 520px);
+  padding: clamp(28px, 5vw, 40px);
+  background: rgba(12, 13, 28, 0.58);
+  border: 1px solid rgba(139, 240, 248, 0.22);
+    border-radius: 28px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 48px rgba(9, 10, 22, 0.35);
+  position: relative;
+  z-index: 1;
+  align-items: flex-start;
 }
 
 .dealBadge {
   display: inline-flex;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(236, 106, 106, 0.35);
-  color: #ec6a6a;
-  letter-spacing: 0.12em;
+  background: linear-gradient(135deg, rgba(236, 106, 106, 0.75), rgba(250, 173, 53, 0.45));
+  color: #11121c;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: 0 12px 24px rgba(236, 106, 106, 0.45);
+}
+
+.dealLayout {
+  width: min(1100px, 100%);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 36px);
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.dealContent h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.6);
+}
+
+.dealContent p {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(15px, 2vw, 17px);
+  line-height: 1.6;
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
 }
 
 .dealActions {
   display: flex;
-  flex-wrap: wrap;
+    flex-wrap: wrap;
   gap: 12px;
+  margin-top: 8px;
+}
+
+.dealBonus {
+  display: flex;
+  flex-direction: column;
+    gap: 16px;
+  padding: clamp(28px, 5vw, 40px);
+  background: rgba(9, 10, 24, 0.72);
+  border: 1px solid rgba(254, 140, 254, 0.22);
+    border-radius: 28px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 24px 60px rgba(8, 9, 22, 0.45);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.dealBonusBadge {
+  align-self: flex-start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(139, 240, 248, 0.25);
+  color: #8bf0f8;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.dealBonus h3 {
+  font-size: clamp(22px, 3vw, 30px);
+  letter-spacing: 0.01em;
+}
+
+.dealBonus p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.dealBonus ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0 0 0 18px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.dealBonusLink {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(254, 140, 254, 0.45);
+  color: #fe8cfe;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.dealBonusLink:hover,
+.dealBonusLink:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(254, 140, 254, 0.7);
+  box-shadow: 0 16px 32px rgba(254, 140, 254, 0.35);
+}
+
+@media (max-width: 1024px) {
+  .dealLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dealContent,
+  .dealBonus {
+    width: 100%;
+  }
+
+  .dealBanner {
+    padding: 56px clamp(20px, 6vw, 48px);
+  }
+}
+
+@media (max-width: 640px) {
+  .dealBanner {
+    padding: 48px 20px;
+  }
+
+  .dealBanner::before,
+  .dealBanner::after {
+    height: 90px;
+  }
+
+  .dealContent,
+  .dealBonus {
+    border-radius: 22px;
+    padding: 24px;
+  }
+
+  .dealBonus ul {
+    font-size: 13px;
+  }
+
+  .dealBonusLink {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .bestSellerRail {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
-}
-
-.bestSellerCard {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 18px;
-  border-radius: 0;
-  background: rgba(12, 14, 28, 0.88);
-  border: 1px solid rgba(89, 189, 247, 0.2);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
 }
 
 .productRating {
@@ -1219,9 +1476,10 @@
 
 .subscribeContent {
   display: flex;
-  flex-direction: column;
+    flex-direction: column;
   gap: 18px;
   max-width: 520px;
+  align-items: flex-start;
 }
 
 .subscribeBadge {
@@ -1230,13 +1488,13 @@
   border-radius: 999px;
   background: rgba(177, 233, 98, 0.35);
   color: #b1e962;
-  letter-spacing: 0.12em;
+    letter-spacing: 0.12em;
   text-transform: uppercase;
   font-size: 12px;
 }
 
 .subscribeForm {
-  display: flex;
+    display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -1262,7 +1520,7 @@
   background: linear-gradient(135deg, #fe8cfe, #faad35);
   color: #0b0d16;
   font-weight: 600;
-  letter-spacing: 0.12em;
+    letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -1292,7 +1550,7 @@
 }
 
 .footer ul {
-  list-style: none;
+    list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
@@ -1311,7 +1569,7 @@
 
 .footerNote {
   margin-top: 36px;
-  font-size: 13px;
+    font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(254, 140, 254, 0.6);
@@ -1375,6 +1633,80 @@
   .dealContent {
     align-items: center;
     text-align: center;
+  }
+}
+
+.categorySlider {
+  position: relative;
+  overflow: hidden;
+  margin-top: 12px;
+  padding: 0;
+}
+
+.categoryTrack {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  animation: slideCategories 28s linear infinite;
+}
+
+.categoryCard {
+  position: relative;
+  flex: 0 0 clamp(210px, 24vw, 260px);
+  height: clamp(230px, 26vw, 320px);
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.38);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.categoryCard:hover,
+.categoryCard:focus-within {
+  transform: translateY(-6px);
+}
+
+.categoryLabel {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fefbff;
+  text-shadow: 0 5px 12px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes slideCategories {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 9px));
+  }
+}
+
+.categorySlider:hover .categoryTrack,
+.categorySlider:focus-within .categoryTrack {
+  animation-play-state: paused;
+}
+
+@media (max-width: 520px) {
+  .categoryTrack {
+    gap: 12px;
+    animation-duration: 22s;
+  }
+
+  .categoryCard {
+    flex-basis: clamp(160px, 60vw, 200px);
+    height: clamp(180px, 45vw, 240px);
   }
 }
 
