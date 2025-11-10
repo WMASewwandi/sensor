@@ -1595,6 +1595,12 @@
     flex-direction: column;
   }
 
+  .subscribeForm input {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+  }
+
   .footer {
     margin-top: 56px;
   }
