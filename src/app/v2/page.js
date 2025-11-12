@@ -479,11 +479,11 @@ export default function NavigationShowcase() {
             </div>
           </section>
 
-          <section className={styles.section} aria-labelledby="categories">
+          <section className={`${styles.section} ${styles.categorySection}`} aria-labelledby="categories">
             <div className={styles.sectionHeader}>
               <h2 id="categories">Playful Categories</h2>
               <Link href="#shop" className={styles.sectionLink}>
-                View All
+                VIEW ALL
               </Link>
             </div>
             <div className={styles.categorySlider}>
@@ -494,7 +494,9 @@ export default function NavigationShowcase() {
                     className={styles.categoryCard}
                     style={{ backgroundImage: category.image }}
                   >
+                    <div className={styles.categoryCardGlow}></div>
                     <div className={styles.categoryLabel}>{category.label}</div>
+                    <div className={styles.categoryOverlay}></div>
                   </div>
                 ))}
               </div>
@@ -575,11 +577,11 @@ export default function NavigationShowcase() {
             </div>
           </section>
 
-          <section className={styles.section} aria-labelledby="best-sellers">
+          <section className={`${styles.section} ${styles.bestSellerSection}`} aria-labelledby="best-sellers">
             <div className={styles.sectionHeader}>
               <h2 id="best-sellers">Best Seller Items</h2>
               <Link href="#shop" className={styles.sectionLink}>
-                View collection
+                VIEW COLLECTION
               </Link>
             </div>
             <div className={styles.bestSellerRail}>
@@ -636,55 +638,59 @@ export default function NavigationShowcase() {
         </main>
 
         <footer className={styles.footer} aria-label="Footer">
-          <div className={styles.footerGrid}>
-            <div>
-              <h3>Sensory</h3>
-              <p>Curated playthings for curious minds. Designed with love in Sri Lanka.</p>
+          <div className={styles.footerBackground}></div>
+          <div className={styles.footerContent}>
+            <div className={styles.footerGrid}>
+              <div className={styles.footerBrand}>
+                <h3>Sensory</h3>
+                <p>Curated playthings for curious minds.</p>
+                <p>Designed with love in Sri Lanka.</p>
+              </div>
+              <div className={styles.footerColumn}>
+                <h4>SHOP</h4>
+                <ul>
+                  <li>
+                    <Link href="#shop">New Arrivals</Link>
+                  </li>
+                  <li>
+                    <Link href="#kids">Kidswear</Link>
+                  </li>
+                  <li>
+                    <Link href="#gifts">Gift Cards</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.footerColumn}>
+                <h4>SUPPORT</h4>
+                <ul>
+                  <li>
+                    <Link href="#faq">FAQ</Link>
+                  </li>
+                  <li>
+                    <Link href="#shipping">Shipping & Delivery</Link>
+                  </li>
+                  <li>
+                    <Link href="#contact">Contact</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.footerColumn}>
+                <h4>FOLLOW</h4>
+                <ul className={styles.socialList}>
+                  <li>
+                    <Link href="#instagram">Instagram</Link>
+                  </li>
+                  <li>
+                    <Link href="#facebook">Facebook</Link>
+                  </li>
+                  <li>
+                    <Link href="#tiktok">TikTok</Link>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4>Shop</h4>
-              <ul>
-                <li>
-                  <Link href="#shop">New Arrivals</Link>
-                </li>
-                <li>
-                  <Link href="#kids">Kidswear</Link>
-                </li>
-                <li>
-                  <Link href="#gifts">Gift Cards</Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4>Support</h4>
-              <ul>
-                <li>
-                  <Link href="#faq">FAQ</Link>
-                </li>
-                <li>
-                  <Link href="#shipping">Shipping & Delivery</Link>
-                </li>
-                <li>
-                  <Link href="#contact">Contact</Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4>Follow</h4>
-              <ul className={styles.socialList}>
-                <li>
-                  <Link href="#instagram">Instagram</Link>
-                </li>
-                <li>
-                  <Link href="#facebook">Facebook</Link>
-                </li>
-                <li>
-                  <Link href="#tiktok">TikTok</Link>
-                </li>
-              </ul>
-            </div>
+            <p className={styles.footerNote}>© {new Date().getFullYear()} SENSORY. ALL RIGHTS RESERVED.</p>
           </div>
-          <p className={styles.footerNote}>© {new Date().getFullYear()} Sensory. All rights reserved.</p>
         </footer>
       </div>
     </div>
