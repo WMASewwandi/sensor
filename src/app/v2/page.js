@@ -638,55 +638,59 @@ export default function NavigationShowcase() {
         </main>
 
         <footer className={styles.footer} aria-label="Footer">
-          <div className={styles.footerGrid}>
-            <div>
-              <h3>Sensory</h3>
-              <p>Curated playthings for curious minds. Designed with love in Sri Lanka.</p>
+          <div className={styles.footerBackground}></div>
+          <div className={styles.footerContent}>
+            <div className={styles.footerGrid}>
+              <div className={styles.footerBrand}>
+                <h3>Sensory</h3>
+                <p>Curated playthings for curious minds.</p>
+                <p>Designed with love in Sri Lanka.</p>
+              </div>
+              <div className={styles.footerColumn}>
+                <h4>SHOP</h4>
+                <ul>
+                  <li>
+                    <Link href="#shop">New Arrivals</Link>
+                  </li>
+                  <li>
+                    <Link href="#kids">Kidswear</Link>
+                  </li>
+                  <li>
+                    <Link href="#gifts">Gift Cards</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.footerColumn}>
+                <h4>SUPPORT</h4>
+                <ul>
+                  <li>
+                    <Link href="#faq">FAQ</Link>
+                  </li>
+                  <li>
+                    <Link href="#shipping">Shipping & Delivery</Link>
+                  </li>
+                  <li>
+                    <Link href="#contact">Contact</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.footerColumn}>
+                <h4>FOLLOW</h4>
+                <ul className={styles.socialList}>
+                  <li>
+                    <Link href="#instagram">Instagram</Link>
+                  </li>
+                  <li>
+                    <Link href="#facebook">Facebook</Link>
+                  </li>
+                  <li>
+                    <Link href="#tiktok">TikTok</Link>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4>Shop</h4>
-              <ul>
-                <li>
-                  <Link href="#shop">New Arrivals</Link>
-                </li>
-                <li>
-                  <Link href="#kids">Kidswear</Link>
-                </li>
-                <li>
-                  <Link href="#gifts">Gift Cards</Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4>Support</h4>
-              <ul>
-                <li>
-                  <Link href="#faq">FAQ</Link>
-                </li>
-                <li>
-                  <Link href="#shipping">Shipping & Delivery</Link>
-                </li>
-                <li>
-                  <Link href="#contact">Contact</Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4>Follow</h4>
-              <ul className={styles.socialList}>
-                <li>
-                  <Link href="#instagram">Instagram</Link>
-                </li>
-                <li>
-                  <Link href="#facebook">Facebook</Link>
-                </li>
-                <li>
-                  <Link href="#tiktok">TikTok</Link>
-                </li>
-              </ul>
-            </div>
+            <p className={styles.footerNote}>© {new Date().getFullYear()} SENSORY. ALL RIGHTS RESERVED.</p>
           </div>
-          <p className={styles.footerNote}>© {new Date().getFullYear()} Sensory. All rights reserved.</p>
         </footer>
       </div>
     </div>
