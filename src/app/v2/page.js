@@ -479,11 +479,11 @@ export default function NavigationShowcase() {
             </div>
           </section>
 
-          <section className={styles.section} aria-labelledby="categories">
+          <section className={`${styles.section} ${styles.categorySection}`} aria-labelledby="categories">
             <div className={styles.sectionHeader}>
               <h2 id="categories">Playful Categories</h2>
               <Link href="#shop" className={styles.sectionLink}>
-                View All
+                VIEW ALL
               </Link>
             </div>
             <div className={styles.categorySlider}>
@@ -494,7 +494,9 @@ export default function NavigationShowcase() {
                     className={styles.categoryCard}
                     style={{ backgroundImage: category.image }}
                   >
+                    <div className={styles.categoryCardGlow}></div>
                     <div className={styles.categoryLabel}>{category.label}</div>
+                    <div className={styles.categoryOverlay}></div>
                   </div>
                 ))}
               </div>
@@ -575,11 +577,11 @@ export default function NavigationShowcase() {
             </div>
           </section>
 
-          <section className={styles.section} aria-labelledby="best-sellers">
+          <section className={`${styles.section} ${styles.bestSellerSection}`} aria-labelledby="best-sellers">
             <div className={styles.sectionHeader}>
               <h2 id="best-sellers">Best Seller Items</h2>
               <Link href="#shop" className={styles.sectionLink}>
-                View collection
+                VIEW COLLECTION
               </Link>
             </div>
             <div className={styles.bestSellerRail}>
